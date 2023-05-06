@@ -88,11 +88,11 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <img class="wave" src="img/wave.png">
+    <img class="wave" src="img/ROADSHOWB4.png">
     <div class="container">
         <div class="img">
             <div class="text-1"><span class="typing"></span></div>
-            <img src="img/bg.png">
+            <img src="img/ROADSHOWB1.png">
         </div>
 
         <div class="login-content">
