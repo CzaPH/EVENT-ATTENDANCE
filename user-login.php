@@ -126,7 +126,7 @@ if (isset($_POST['submit'])) {
                             <i id="eyeIcon" class="fa-solid fa-eye"></i></button> -->
                     </div>
                 </div>
-                <!-- <a href="register_form.php">register now</a> -->
+                <a href="register_form.php">register now</a>
                 <input type="submit" class="btn" value="Login" name="submit">
             </form>
         </div>
