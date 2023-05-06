@@ -78,7 +78,7 @@ location.href = 'subjects.php';
 </head>
 
 <body onload="startTime()">
-    <nav class="navbar navbar-expand-lg mb-1" style="background-color: coral">
+    <nav class="navbar navbar-expand-lg mb-1" style="background-color: #461E7F">
         <a class="navbar-brand" href="subjects.php"><strong style="color: #fff"><i class='fa fa-user-clock'></i> Smart
                 Student Class Attendance Monitoring System </strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -90,7 +90,8 @@ location.href = 'subjects.php';
         <div class="row">
             <div class="col-md-4">
                 <center>
-                    <p style="border: 1px solid coral;background-color:coral;color: #fff"><i class="fas fa-qrcode"></i>
+                    <p style="border: 1px solid #461E7F;background-color:#461E7F;color: #fff"><i
+                            class="fas fa-qrcode"></i>
                         TAP HERE</p>
                 </center>
                 <video id="preview" width="100%"></video>
@@ -101,7 +102,7 @@ location.href = 'subjects.php';
             </div>
             <div class="col-md-8">
                 <center>
-                    <div id="clockdate" style="border: 1px solid coral;background-color: coral">
+                    <div id="clockdate" style="border: 1px solid #461E7F;background-color: #461E7F">
                         <div class="clockdate-wrapper">
                             <div id="clock" style="font-weight: bold; color: #fff;font-size: 40px"></div>
                             <div id="date" style="color: #fff"><i class="fas fa-calendar"></i>
