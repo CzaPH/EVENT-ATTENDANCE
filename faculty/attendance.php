@@ -24,8 +24,8 @@
             $schedule = str_replace(array('[',']',"\"") ,'', $row['schedules']);
             $time = date('H:i:s'); 
 
-            $query3 = $conn->prepare("SELECT * FROM schedules WHERE day_of_the_week = ? AND start_time <= ? AND end_time >= ? AND schedule_id IN ($schedule)");
-            $query3->bind_param('sss',$day, $time, $time);
+            $query3 = $conn->prepare("SELECT * FROM schedules WHERE day_of_the_week = ? AND end_time > ? AND schedule_id IN ($schedule)");
+            $query3->bind_param('ss',$day, $time);
             $query3->execute();
             
             $result3 = $query3->get_result();
@@ -51,7 +51,6 @@ location.href = 'subjects.php';
         exit;
     }
 ?>
-
 <!doctype html>
 <html lang="en">
 
