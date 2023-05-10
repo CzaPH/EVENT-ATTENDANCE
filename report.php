@@ -43,7 +43,7 @@ if(isset($_POST['class_id']) && !empty($_POST['class_id'])) {
                                     class_list
                                     INNER JOIN tblstudentinfo 
                                         ON (class_list.student_id = tblstudentinfo.id)
-                                        WHERE class_id = ? ORDER BY fname ASC");
+                                        WHERE class_id = ? ORDER BY cys ASC");
     $query2->bind_param('i', $class_id);
     $query2->execute();
     $result2 = $query2->get_result();
@@ -224,6 +224,9 @@ if(isset($_POST['faculty_id'])) {
                             <th style="width:400px;">
                                 <center>NAME</center>
                             </th>
+                            <th style="width:150px;">
+                                <center>COURSE YR & SECTION</center>
+                            </th>
                             <?php foreach($result3 as $row3):?>
                             <th class="p-0" style="width:100px;">
                                 <center>
@@ -237,7 +240,8 @@ if(isset($_POST['faculty_id'])) {
                         <?php foreach($result2 as $row2):?>
                         <tr>
                             <td class="px-3"><?=$row2['stud_id']?></td>
-                            <td class="px-3"><?=strtoupper($row2['lname'].', '.$row2['fname'].' '.$row2['mname'])?></td>
+                            <td class="px-3"><?=strtoupper($row2['fname'])?></td>
+                            <td class="px-3"><?=strtoupper($row2['cys'].'')?></td>
                             <?php foreach($result3 as $row3):
                                 $query_3 = $conn->prepare("SELECT *
                                                         FROM 
@@ -248,7 +252,7 @@ if(isset($_POST['faculty_id'])) {
 
                                 $result_3 = $query_3->get_result();
                                 ?>
-                                <td>
+                            <td>
                                 <center>
                                     <?php if(mysqli_num_rows($result_3) > 0):
                                     $row4 = mysqli_fetch_array($result_3);?>
@@ -267,7 +271,7 @@ if(isset($_POST['faculty_id'])) {
                                     </span>
                                     <?php endif;?>
                                 </center>
-                                </td>
+                            </td>
                             <?php endforeach;?>
                         </tr>
                         <?php endforeach;?>
