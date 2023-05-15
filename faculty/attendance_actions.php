@@ -36,8 +36,8 @@
             $result2 = $query2->get_result();
             if(mysqli_num_rows($result2) > 0) {
 
-                $select = $conn->prepare("SELECT * FROM tblattendance WHERE fk_student_id = ? AND fk_subject_id = ? AND logdate = ?");
-                $select->bind_param('iis', $row['id'], $class_id, $schedule_id);
+                $select = $conn->prepare("SELECT * FROM tblattendance WHERE fk_student_id = ? AND fk_subject_id = ? AND  logdate = ?");
+                $select->bind_param('iis', $row['id'], $class_id, $logdate);
                 $select->execute();
                 $r_select = $select->get_result();
                 
