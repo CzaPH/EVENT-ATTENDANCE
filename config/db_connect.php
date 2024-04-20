@@ -2,7 +2,7 @@
 
 $servername = "lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
 $username = "z4lalbkhiykyuwaa";
-$password = "qaxa067j1uqvnx8b";
+$password = "uf57bqyv1u9x2cxl";
 $database = "gdcmy2nzpcyi4nxw";
 
 try {

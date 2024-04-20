@@ -4,7 +4,7 @@ class ConnectionHandler
 {
       protected $host = 'lfmerukkeiac5y5w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
       protected $user = 'z4lalbkhiykyuwaa';
-      protected $password = 'qaxa067j1uqvnx8b';
+      protected $password = 'uf57bqyv1u9x2cxl';
       protected $database = 'gdcmy2nzpcyi4nxw';
 
       public $con = null;
