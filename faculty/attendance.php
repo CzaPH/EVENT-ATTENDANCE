@@ -24,8 +24,10 @@
             $schedule = str_replace(array('[',']',"\"") ,'', $row['schedules']);
             $time = date('H:i:s'); 
 
+           
             $query3 = $conn->prepare("SELECT * FROM schedules WHERE day_of_the_week = ? AND end_time > ? AND schedule_id IN ($schedule)");
             $query3->bind_param('ss',$day, $time);
+
             $query3->execute();
             
             $result3 = $query3->get_result();
@@ -51,6 +53,7 @@ location.href = 'subjects.php';
         exit;
     }
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -58,7 +61,8 @@ location.href = 'subjects.php';
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
@@ -77,7 +81,7 @@ location.href = 'subjects.php';
 </head>
 
 <body onload="startTime()">
-    <nav class="navbar navbar-expand-lg mb-1" style="background-color: #461E7F">
+    <nav class="navbar navbar-expand-lg mb-1" style="background-color: coral">
         <a class="navbar-brand" href="subjects.php"><strong style="color: #fff"><i class='fa fa-user-clock'></i> Smart
                 Student Class Attendance Monitoring System </strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -89,8 +93,7 @@ location.href = 'subjects.php';
         <div class="row">
             <div class="col-md-4">
                 <center>
-                    <p style="border: 1px solid #461E7F;background-color:#461E7F;color: #fff"><i
-                            class="fas fa-qrcode"></i>
+                    <p style="border: 1px solid coral;background-color:coral;color: #fff"><i class="fas fa-qrcode"></i>
                         TAP HERE</p>
                 </center>
                 <video id="preview" width="100%"></video>
@@ -101,7 +104,7 @@ location.href = 'subjects.php';
             </div>
             <div class="col-md-8">
                 <center>
-                    <div id="clockdate" style="border: 1px solid #461E7F;background-color: #461E7F">
+                    <div id="clockdate" style="border: 1px solid coral;background-color: coral">
                         <div class="clockdate-wrapper">
                             <div id="clock" style="font-weight: bold; color: #fff;font-size: 40px"></div>
                             <div id="date" style="color: #fff"><i class="fas fa-calendar"></i>
